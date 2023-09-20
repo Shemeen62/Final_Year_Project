@@ -1,0 +1,87 @@
+body{
+    font-family: "poppins", sans-serif;
+}
+.App {
+    display: flex;
+    font-family: "poppins", sans-serif;
+    color: white;
+    background: linear-gradient(179deg, #050505, #494749);
+    text-shadow: 1px 0px 2px #61ebeb;
+  }
+  .body_container {
+    flex: 1;
+  }
+  .sidebar_container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  /* Add these styles to the existing CSS */
+  .page-container {
+    display: flex;
+    box-sizing: border-box; /* Add this property */
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px; /* Add padding to create space between sidebar and content */
+    box-sizing: border-box; /* Add this property */
+  }
+
+  /* Adjust sidebar height and margin-top for consistency */
+  .sidebar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    min-height: 100vh; /* Use min-height to allow sidebar to expand vertically if needed */
+    padding: 15px;
+    margin: 10px; /* Remove margin to align with content area */
+    margin-top: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
+  .lines_icon{
+    display: flex;
+    align-self: flex-end;
+    border-radius: 5px;
+  }
+  
+  .profile{
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  }
+  
+  .profile>img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .groups{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+  }
+  .group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+  }
+  h3{
+    font-size: 1rem;
+    margin: 10px 0px 10px 0px
+  }
+  .group_head{
+    letter-spacing: 2px;
+  }

@@ -1,0 +1,43 @@
+.card-container {
+    width: 1000px;
+    height: auto;
+    margin: 30px auto 50px; /* Adjust horizontal margin to center the card */
+    border-radius: 8px;
+    padding-bottom: 30px;
+    font-family: "poppins", sans-serif;
+    color: white;
+    background: black;
+    /*linear-gradient(179deg, #000000, #272627)*/
+    text-shadow: 1px 0px 2px #8dc4f0;
+  
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    /* Additional styles */
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+  }
+
+  .card-container-details {
+    width: 1300px;
+    height: auto;
+    margin: 50px auto 50px; /* Adjust horizontal margin to center the card */
+    border-radius: 8px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    font-family: "poppins", sans-serif;
+    color: white;
+    background: black;
+    /*linear-gradient(179deg, #000000, #272627)*/
+    text-shadow: 1px 0px 2px #8dc4f0;
+  
+    /* Center content vertically */
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+  
+    /* Additional styles */
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+  }
+  
