@@ -1,0 +1,21 @@
+/* Predictions.css */
+
+.predictions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the container to take the full viewport height */
+  }
+  
+  .predictions-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .plot-container {
+    display: flex;
+    justify-content: center;
+  }
+  

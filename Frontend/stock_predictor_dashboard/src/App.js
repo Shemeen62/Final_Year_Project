@@ -4,7 +4,9 @@ import './App.css';
 // import Homepage from "./components/HomePage";
 import StockOverviewPage from './pages/StockOverviewPage';
 import StockDetailPage from './pages/StockDetailPage';
+import TickerInfoPage from './pages/Ticker_InfoPage';
 import { WatchListContextProvider } from './context/WatchListContext';
+import Predictions from './components/Predictions';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<StockOverviewPage/>}/>
             <Route path="/detail/:symbol" element={<StockDetailPage/>}/>
+            <Route path="/tickerinfo" element={<TickerInfoPage/>}/>
+            <Route path="/Predictions" element={<Predictions/>} />
           </Routes>
         </BrowserRouter>
       </WatchListContextProvider>

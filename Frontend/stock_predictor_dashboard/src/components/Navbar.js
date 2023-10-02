@@ -8,13 +8,12 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-
-    const theme = createTheme({
-        palette: {
-          primary: teal,
-          secondary: pink,
-        },
-      });
+  const theme = createTheme({
+    palette: {
+      primary: teal,
+      secondary: pink,
+    },
+  });
 
   const navigate = useNavigate();
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -31,8 +30,8 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Redirect to a new page with input values
-    navigate(`/new-page?input1=${input1}&input2=${input2}`);
+    // Redirect to a new page with input values as query parameters
+    navigate(`/Predictions?input1=${input1}&input2=${input2}`);
     // Close the popup
     setPopupVisible(false);
   };
@@ -50,46 +49,47 @@ const Navbar = () => {
         <a href='#vgghvhg' onClick={togglePopup}>
           Predict Stocks
         </a>
-        <a href='#vgghvhg'>Ticker Info</a>
+        <a href='tickerinfo'>Ticker Info</a>
       </nav>
 
       {isPopupVisible && (
         <div className='popup-container'>
-        <div className='popup-content'>
-          <h3>STOCK Predictor +</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="stockTicker">Stock Ticker:</label>
-              <TextField
-                required
-                id="stockTicker"
-                label="Required"
-                defaultValue=""
-              />
-            </div>
+          <div className='popup-content'>
+            <h3>STOCK Predictor +</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="stockTicker">Stock Ticker:</label>
+                <TextField
+                  required
+                  id="stockTicker"
+                  label="Required"
+                  defaultValue=""
+                  onChange={(e) => setInput1(e.target.value)} // Update input1 state
+                />
+              </div>
       
-            <div className="form-group">
-              <label htmlFor="numDays">Number of Days to predict:</label>
-              <TextField
-                required
-                id="numDays"
-                label="Required"
-                defaultValue=""
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="numDays">Number of Days to predict:</label>
+                <TextField
+                  required
+                  id="numDays"
+                  label="Required"
+                  defaultValue=""
+                  onChange={(e) => setInput2(e.target.value)} // Update input2 state
+                />
+              </div>
       
-            <div className="button-container">
-              <ThemeProvider theme={theme}>
-                <Button variant="contained">Predict</Button>
-                <Button variant="contained" color="secondary" onClick={togglePopup} sx={{ ml: 2 }}>
-                  Cancel
-                </Button>
-              </ThemeProvider>
-            </div>
-          </form>
+              <div className="button-container">
+                <ThemeProvider theme={theme}>
+                  <Button type="submit" variant="contained">Predict</Button>
+                  <Button variant="contained" color="secondary" onClick={togglePopup} sx={{ ml: 2 }}>
+                    Cancel
+                  </Button>
+                </ThemeProvider>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-      
       )}
     </div>
   );

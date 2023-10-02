@@ -1,5 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import Navbar from '../components/Navbar';
+import '../stylesheets/Predictions.css';
 
 class Predictions extends React.Component{
 
@@ -22,6 +24,8 @@ class Predictions extends React.Component{
         const pointerToThis = this;
         console.log(pointerToThis);
        let symbol = 'AAPL';
+    //    let symbol = this.props.input1;
+    //     let numDays = this.props.input2;
        const API_KEY = process.env.REACT_APP_API_KEY;
        let API_call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${API_KEY}`;
        let XvaluesofStockChartFunction = [];
@@ -69,41 +73,42 @@ class Predictions extends React.Component{
     }
 
  
-    render(){
-
+    render() {
         const layout = {
-            plot_bgcolor: '#231f22',  // Set the background color
-            paper_bgcolor: 'black', // Set the color of the entire plot area
-            font: {
-                color: 'white'         // Set the color of text elements
-            },
-            width: 800,
-            height: 600,
-            title: 'AAPL'
-        }
-        
-        const config = {responsive: true};
-        return(
-            <div>
-            <h1>AAPL Predictor</h1>
-                <Plot
-                    data={[
-                    {
-                        x: this.state.XvaluesofStockChart,
-                        y: this.state.ClosevaluesofStockChart,
-                        type: 'scatter',
-                        mode: 'lines+markers',
-                        marker: {color: '#ff0030'},
-                    }
+          plot_bgcolor: '#231f22',
+          paper_bgcolor: 'black',
+          font: {
+            color: 'white'
+          },
+          width: 800,
+          height: 600,
+          title: 'AAPL'
+        };
+    
+        const config = { responsive: true };
+    
+        return (
+          <div className="predictions-container"> {/* Apply CSS class to container */}
+            <Navbar />
+            <h1 className="predictions-heading">Predicted AAPL Stock Prices</h1> {/* Apply CSS class to heading */}
+            <div className="plot-container"> {/* Apply CSS class to plot container */}
+              <Plot
+                data={[
+                  {
+                    x: this.state.XvaluesofStockChart,
+                    y: this.state.ClosevaluesofStockChart,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    marker: { color: '#ff0030' },
+                  }
                 ]}
-                    layout={ layout }
-                    config={config}
-                />
+                layout={layout}
+                config={config}
+              />
             </div>
-        )
+          </div>
+        );
+      }
     }
-            
-
-};
-
-export default Predictions;
+    
+    export default Predictions;
